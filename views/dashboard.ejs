@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/header.ejs") %>
+
+<body>
+  <div class="container">
+    <h1>Welcome, <u><%= user.first_name %></u></h1>
+    <h1>Balance: <%= user.balance %></h1>
+    
+    <div class="form">
+      <div class="tabbed">
+        <input type="radio" id="tab1" name="css-tabs" checked>
+        <input type="radio" id="tab2" name="css-tabs">
+        <input type="radio" id="tab3" name="css-tabs">
+        
+        <ul class="tabs">
+          <li class="tab"><label for="tab1">Send Money</label></li>
+          <% if (user.is_agent) { %>
+            <li class="tab"><label for="tab2">Cash In</label></li>
+          <% } else { %>
+            <li class="tab"><label for="tab2">Cash Out</label></li>
+          <% } %>
+          <li class="tab"><label for="tab3">Pay Bill</label></li>
+        </ul>
+        
+        <div class="tab-content">
+          <form action="/send_money" method="POST">
+            <h1>Send Money</h1>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" required>
+            <input type="submit" value="Send Money">
+          </form>
+        </div>
+        
+        <div class="tab-content">
+          <form action="/cash_out" method="POST">
+            <% if (user.is_agent) { %>
+              <h1>Cash In</h1>
+            <% } else { %>
+              <h1>Cash Out</h1>
+            <% } %>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" required>
+            <% if (user.is_agent) { %>
+              <label for="email">Customer Email</label>
+            <% } else { %>
+              <label for="email">Agent Email</label>
+            <% } %>
+            <input type="email" name="email" required>
+            <input type="submit" value="Cash Out">
+          </form>
+        </div>
+        
+        <div class="tab-content">
+          <form action="/pay_bill" method="POST">
+            <h1>Pay Bill</h1>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" required>
+            <label for="bank_code">Bank</label>
+            <select name="bank_code">
+              <option value="BB1">BRAC Bank</option>
+              <option value="SB1">SIBL</option>
+              <option value="PB1">Prime Bank</option>
+              <option value="AB1">Arafah Bank</option>
+              <option value="DB1">DBBL</option>
+            </select>
+            <label for="bank_type">Type of Bill</label>
+            <select name="bank_type">
+              <option value="WB">Water Bill</option>
+              <option value="EB">Electricity Bill</option>
+              <option value="GB">Gas Bill</option>
+            </select>
+            <input type="submit" value="Pay Bill">
+          </form>
+        </div>
+      </div>
+
+      <% if (msg != null) { %>
+        <div class="form msg">
+          <h3><%= msg %></h3>
+        </div>
+      <% } %>
+    </div>
+    
+    <a href="/">Homepage</a>
+    <a href="/history">History</a>
+    <a href="/bill_history">Bill Payment History</a>
+    <a href="/logout">Logout</a>
+  </div>
+</body>
+</html>

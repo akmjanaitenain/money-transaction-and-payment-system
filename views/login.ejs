@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/header.ejs") %>
+
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+      <input type="submit" value="Login">
+    </form>
+
+    <% if (msg != null) { %>
+      <div class="form msg">
+        <h3><%= msg %></h3>
+      </div>
+    <% } %>
+    
+    <a href="/">Homepage</a>
+    <a href="signup">Signup</a>
+  </div>
+</body>
+</html>

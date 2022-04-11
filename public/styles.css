@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ADADBC;
+  font-family: 'Playfair Display', serif;
+}
+
+.container {
+  margin: 10px auto;
+  padding: 10px;
+  width: 600px;
+  height: 800px;
+  background-color: #65657C;
+  color: #ADADBC;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+.home h1 {
+  font-size: 180px;
+}
+
+.home p {
+  margin: 10px auto;
+  font-size: 50px;
+  text-align: center;
+  transform: translate(0, 70px);
+}
+
+h1, h2, h3, form {
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  margin: 0 auto;
+  padding: 0;
+  color: #ADADBC;
+  font-weight: bolder;
+  font-size: larger;
+  text-decoration: none;
+}
+
+/* .btn {
+  margin: 1em auto;
+  width: 100px;
+} */
+
+form {
+  width: 200px;
+}
+
+.form {
+  margin: 10px;
+  padding: 10px;
+}
+
+form {
+  margin: 20px auto;
+}
+
+table, th, tr, td {
+  border-collapse: collapse;
+  border: 1px solid #ADADBC;
+  text-align: left;
+}
+
+.msg {
+  background: #ADADBC;
+  color: #65657C;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  border: none;
+  border-bottom: #ADADBC;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #ADADBC;
+  margin-bottom: 5px;
+  background-color: #65657C;
+  color: #ADADBC;
+}
+
+input[type="submit"] {
+  border: none;
+  background: #333;
+  color: #ADADBC;
+}
+
+input[type="submit"]:hover {
+  border: none;
+  background: #444;
+  color: #ADADBC;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+  border: none;
+  background: #65657C;
+  color: #ADADBC;
+  margin-bottom: 5px;
+}
+
+.tabbed {
+	overflow-x: hidden; /* so we could easily hide the radio inputs */
+  width: 498px;
+	height: 275px;
+	margin: 30px auto;
+  justify-self: center;
+	padding-bottom: 16px;
+  background: #ADADBC;
+  border-radius: 0 0 10px 10px;
+}
+
+.tabbed [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tabs {
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+  margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.tab {
+	width: 166px;
+}
+
+.tab > label {
+	display: block;
+	margin-bottom: -1px;
+	padding: 12px 15px;
+	border: 1px solid #ccc;
+	background: #65657C;
+	color: #ADADBC;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1px;
+	cursor: pointer;
+  border: none;
+	border-top: 2px solid #ccc;
+	transition: all 0.3s;
+}
+.tab:hover label {
+	border-top: 2px solid;
+	border-top-color: #333;
+	color: #333;
+}
+
+.tab-content {
+	display: none;
+	color: #65657C;
+}
+
+/* As we cannot replace the numbers with variables or calls to element properties, the number of this selector parts is our tab count limit */
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label {
+	border-top: 2px solid;
+	border-top-color: #333;
+	border-bottom-color: #ADADBC;
+	background: #ADADBC;
+	color: #65657C;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3) {
+	display: block;
+}
+
+:focus {
+  outline: none;
+}

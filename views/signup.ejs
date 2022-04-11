@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/header.ejs") %>
+
+<body>
+  <div class="container">
+    <h1>Signup</h1>
+    <form action="/signup" method="POST">
+      <br>
+      <label for="first_name">First Name</label>
+      <input type="text" name="first_name">
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name">
+      <label for="phone_no">Phone no.</label>
+      <input type="text" name="phone_no">
+      <label for="nID">NID no.</label>
+      <input type="text" name="nID">
+      <label for="username">Username</label>
+      <input type="text" name="username">
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+      <div class="check">
+        <label for="is_agent">Are you an agent?</label>
+        <input type="checkbox" name="is_agent">
+      </div>
+      <br>
+      <input type="submit">
+    </form>
+    <a href="/">Homepage</a>
+    <a href="login">Login</a>
+  </div>
+</body>
+</html>
