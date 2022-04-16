@@ -51,5 +51,5 @@ app.use((req, res) => {
 dblink = process.env.URI;
 dbConnect(dblink).then(() => {
   app.listen(process.env.PORT);
-  console.log(`Listening to port ${process.env.PORT}`);
+  console.log(`Listening to port http://localhost:${process.env.PORT}`);
 });
