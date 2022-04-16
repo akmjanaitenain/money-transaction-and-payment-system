@@ -18,5 +18,7 @@
 
 From environment variables [`.env` file] you need to set:
 >**SESSION_SECRET** to anything
+>
 >**URI** to mongodb database uri
+>
 >**PORT** to a valid port
